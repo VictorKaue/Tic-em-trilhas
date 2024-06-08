@@ -25,7 +25,7 @@ void printArray(int vetor[], int n){
     int i;
     for (i = 0; i < n; i++)
     {
-        printf("Valod do vetor na posição de índice %dº: %d\n", i, vetor[i]);
+        printf("Valor do vetor na posição de índice %dº: %d\n", i, vetor[i]);
     }
     
 }

@@ -5,31 +5,36 @@
 #include <stdio.h>
 #include <locale.h>
 
+void bubblesort(int *vetor, int n){
+	int i, j, aux;
+	for (i = 0; i < n-1; i++)
+    {
+        for (j = 0; j < n-1; j++)
+        {
+            if (vetor[j] > vetor[j+1])
+            {
+				aux = vetor[j];
+				vetor[j] = vetor[j+1];  
+				vetor[j+1] = aux;
+			}
+        }
+    }
+}
+
 void printArray(int vetor[], int n){
     int i;
     for (i = 0; i < n; i++)
     {
-        printf("Valod do vetor na posição de índice %d: %d ", i, vetor[i]);
+        printf("Valod do vetor na posição de índice %dº: %d\n", i, vetor[i]);
     }
     
 }
 
 int main(){
     setlocale(LC_ALL, "Portuguese");
-    int vetor[5] = {15,23,35,1,18}, i, j, aux;
+    int vetor[5] = {45,23,35,1,18}, i, j, aux;
     int n = sizeof(vetor) / sizeof(vetor[0]);
-    printf("%d", n);
-    for (i = 0; i < n; i++)
-    {
-        for (j = 0; j < n; j++)
-        {
-            if (vetor[j] > vetor[j+1])
-            {
-                aux = vetor[j];
-                vetor[j+1] = vetor[j];
-                vetor[j+1] = aux;
-            }
-        }
-    }
+    bubblesort(vetor,n);
+    printArray(vetor, n);
     return 0;
 }

@@ -1,1 +1,37 @@
+// programa que busca um elemento específico 
+// em um vetor e retorna sua posição.
+
 #include <stdio.h>
+#include <locale.h>
+
+void Buscador(double vetor[], int n);
+
+int main(){
+    setlocale(LC_ALL, "Portuguese");
+    int n;
+	printf("Digite qual será o tamanho do vetor: ");
+    scanf("%d",&n);
+    double vetor[n];
+    int i;
+    for(i=0; i < n; i++){
+    	printf("Digite o %d° número: ", i+1);
+    	scanf("%lf",&vetor[i]);
+	}
+    Buscador(vetor, n);
+
+    return 0;
+}
+
+void Buscador(double vetor[], int n){
+    int i;
+    double elemento;
+    printf("Digite qual elemento deseja procurar: ");
+    scanf("%lf",&elemento);
+    for (i = 0; i < n; i++)
+    {
+        if(vetor[i] == elemento){
+            break;
+        }
+    }
+    printf("O elemento está no índice %d do vetor\n e na posição %d°", i, i+1);
+}
